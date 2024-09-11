@@ -3,138 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>購入完了</title>
+    <title>重要なお知らせ</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #000000;
+            color: #ffffff;
             margin: 0;
-            background-color: #717070;
-            /* 背景画像の設定 */
-            background-image: url('C:\Users\dsagawa\Desktop\写真保存用\2.png'); /* 画像のパスを指定 */
-            background-size: cover; /* 背景画像をカバーする */
-            background-position: center; /* 背景画像の位置を中央に設定 */
-            background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */
+            padding: 0;
         }
+
         .container {
-            position: relative;
-            max-width: 400px;
-            height: 250px;
-            background: rgba(240, 240, 240, 0.8); /* 背景を半透明にして画像が見えるようにする */
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
+            background: #333333;
             border-radius: 8px;
-            overflow: hidden;
-            animation: zoomIn 4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-            z-index: 1;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
-        .stroke {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
+
+        header {
+            background: #e60012;
+            color: #ffffff;
+            padding: 15px 0;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
         }
-        .stroke .border {
-            content: "";
-            position: absolute;
-            opacity: 0;
-        }
-        .stroke .border.top,
-        .stroke .border.bottom {
-            width: calc(100% - 20px);
-        }
-        .stroke .border.top {
-            border-top: 3px solid #ff0000;
-            right: 0;
-            top: 0;
-        }
-        .stroke .border.bottom {
-            border-bottom: 3px solid #00ff44;
-            left: 0;
-            bottom: 0;
-        }
-        .stroke .border.right,
-        .stroke .border.left {
-            height: calc(100% - 20px);
-        }
-        .stroke .border.right {
-            border-right: 3px solid #2b00ff;
-            right: 0;
-            top: 0;
-        }
-        .stroke .border.left {
-            border-left: 3px solid #ffea00;
-            left: 0;
-            bottom: 0;
-        }
-        .stroke.is-animated .border {
-            opacity: 1;
-        }
-        .stroke.is-animated .border.top,
-        .stroke.is-animated .border.bottom {
-            animation: stroke-width 6s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .stroke.is-animated .border.right,
-        .stroke.is-animated .border.left {
-            animation: stroke-height 5s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        @keyframes stroke-width {
-            0% {
-                width: 0;
-                opacity: 1;
-            }
-            100% {
-                width: calc(100% - 20px);
-                opacity: 1;
-            }
-        }
-        @keyframes stroke-height {
-            0% {
-                height: 0;
-                opacity: 1;
-            }
-            100% {
-                height: calc(100% - 20px);
-                opacity: 1;
-            }
-        }
-        @keyframes zoomIn {
-            0% {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        .content {
-            position: relative;
-            z-index: 1;
-        }
+
         h1 {
-            color: #4caf50;
+            margin: 0;
+            font-size: 28px;
+            color: #ffcc00;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .alert {
+            border: 1px solid #e60012;
+            border-radius: 8px;
+            padding: 20px;
+            background: #4d0000;
+            color: #ffcc00;
+        }
+
+        .alert h2 {
+            margin-top: 0;
+            color: #ffcc00;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            color: #ffffff;
+        }
+
+        table, th, td {
+            border: 1px solid #000000;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #e60012;
+            color: #ffffff;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ffcc00;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #e6b800;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #e60012;
+            color: #ffffff;
+            border-radius: 0 0 8px 8px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="stroke anim is-animated">
-            <div class="border top"></div>
-            <div class="border right"></div>
-            <div class="border bottom"></div>
-            <div class="border left"></div>
-        </div>
-        <div class="content">
-            <h1>購入が完了しました</h1>
-            <p>ご注文いただき、ありがとうございます。詳細は下記のメールでお送りしました。</p>
-            <p>担当者アドレス: ibukinonoshion@yahoo.co.jp</p>
-        </div>
+        <header>
+            <h1>重要なお知らせ</h1>
+        </header>
+        <main>
+            <section class="alert">
+                <h2>お支払いのご確認</h2>
+                <p>この度はご利用いただきありがとうございます。お客様のアカウントには以下の請求が発生しております。至急の対応をお願い申し上げます。</p>
+                <table>
+                    <tr>
+                        <th>請求内容</th>
+                        <th>金額</th>
+                    </tr>
+                    <tr>
+                        <td>サービス料金</td>
+                        <td>¥50,000</td>
+                    </tr>
+                    <tr>
+                        <td>追加料金</td>
+                        <td>¥5,000</td>
+                    </tr>
+                </table>
+                <p>詳細については、下記のリンクからご確認ください。</p>
+                <!-- リンク先をpurchase_complete.htmlに設定 -->
+                <a href="purchase_complete.html" class="button">詳細確認</a>
+            </section>
+        </main>
+        <footer>
+            <p>© 2024 架空請求株式会社</p>
+        </footer>
     </div>
 </body>
 </html>
